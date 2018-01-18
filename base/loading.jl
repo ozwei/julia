@@ -202,9 +202,9 @@ end
 
 function PkgId(m::Module)
     uuid = UUID(ccall(:jl_module_uuid, NTuple{2, UInt64}, (Any,), m))
-    name = String(module_name(m))
-    UInt128(uuid) == 0 && return PkgId(name)
-    return PkgId(uuid, name)
+    mname = String(name(m))
+    UInt128(uuid) == 0 && return PkgId(mname)
+    return PkgId(uuid, mname)
 end
 
 ==(a::PkgId, b::PkgId) = a.uuid == b.uuid && a.name == b.name
