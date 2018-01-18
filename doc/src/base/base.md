@@ -339,7 +339,6 @@ Base.fullname
 Base.names
 Core.nfields
 Base.isconst
-Base.function_name
 Base.functionloc(::Any, ::Any)
 Base.functionloc(::Method)
 Base.@functionloc
