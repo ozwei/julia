@@ -321,7 +321,7 @@ end
 @test Base.IteratorSize(product(1:2))                        == Base.HasShape{1}()
 @test Base.IteratorSize(product(1:2, 1:2))                   == Base.HasShape{2}()
 @test Base.IteratorSize(product(take(1:2, 1), take(1:2, 1))) == Base.HasShape{2}()
-@test Base.IteratorSize(product(take(1:2, 2)))               == Base.HasShape{2}()
+@test Base.IteratorSize(product(take(1:2, 2)))               == Base.HasShape{1}()
 @test Base.IteratorSize(product([1 2; 3 4]))                 == Base.HasShape{2}()
 
 # IteratorEltype trait business
